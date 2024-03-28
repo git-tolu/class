@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>report card</title>
+    <link rel="stylesheet" href="./assets/bootstrap5.2/bootstrap.min.css" />
+  </head>
+  <body>
+    <div
+      class="container d-flex justify-content-center align-items-center text-center"
+      style="height: 100vh"
+    >
+      <div class="card">
+        <div class="card-header">
+          <h1 class="text-capittalize">Report card generator</h1>
+
+          <form id="reportForm">
+            <div class="form-group my-2">
+              <label for="subject1">Students name :</label>
+              <input
+                type="text"
+                class="form-control"
+                id="student"
+                required
+                placeholder="Student Name"
+              />
+            </div>
+            <div class="form-group my-2">
+              <label for="subject1">Subject 1:</label>
+              <div class="row">
+                <div class="col-md-6">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="subjectname1"
+                    min="0"
+                    max="100"
+                    required
+                    placeholder="subject name"
+                  />
+                </div>
+                <div class="col-md-6">
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="subject1"
+                    min="0"
+                    max="100"
+                    required
+                    placeholder="Subject Score"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="form-group my-2">
+              <label for="subject1">Subject 2:</label>
+              <div class="row">
+                <div class="col-md-6">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="subjectname2"
+                    min="0"
+                    max="100"
+                    required
+                    placeholder="subject name"
+                  />
+                </div>
+                <div class="col-md-6">
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="subject2"
+                    min="0"
+                    max="100"
+                    required
+                    placeholder="Subject Score"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="form-group my-2">
+              <label for="subject1">Subject 3:</label>
+              <div class="row">
+                <div class="col-md-6">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="subjectname3"
+                    min="0"
+                    max="100"
+                    required
+                    placeholder="subject name"
+                  />
+                </div>
+                <div class="col-md-6">
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="subject3"
+                    min="0"
+                    max="100"
+                    required
+                    placeholder="Subject Score"
+                  />
+                </div>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary">
+              Generate Report Card
+            </button>
+          </form>
+          <div id="reportCard" class="report-card"></div>
+        </div>
+      </div>
+    </div>
+    <script src="./assets/bootstrap5.2/jquery.min.js"></script>
+    <script src="./assets/bootstrap5.2/bootstrap.bundle.min.js"></script>
+    <script>
+      document
+        .getElementById("reportForm")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+
+          const student = document.getElementById("student").value;
+          const subject1 = document.getElementById("subjectname1").value;
+          const subject2 = document.getElementById("subjectname2").value;
+          const subject3 = document.getElementById("subjectname3").value;
+
+          const subject1Grade = 
+            parseInt(document.getElementById("subject1").value) 
+          ;
+          const subject2Grade = 
+          parseInt(document.getElementById("subject2").value)
+          ;
+          const subject3Grade = 
+          parseInt(document.getElementById("subject3").value)
+          ;
+
+
+          if (subject1Grade > 85) {
+            const grade = "grade a";
+          } else if (75 >= subject1Grade && subject1Grade <= 84) {
+            const grade = "grade b";
+          } else if (65 >= subject1Grade && subject1Grade <= 74) {
+            const grade = "grade c";
+          } else if (55 >= subject1Grade && subject1Grade <= 64) {
+            const grade = "grade d";
+          } else if (45 >= subject1Grade && subject1Grade <= 54) {
+            const grade = "grade e";
+          } else if (44 > subject1Grade) {
+            const grade = "grade f9";
+          } else {
+            console.log("invalid");
+          }
+
+
+
+          if (subject2Grade >= 85) {
+            const grade1 = "grade a";
+          } else if (75 >= subject2Grade && subject2Grade <= 84) {
+            const grade1 = "grade b";
+          } else if (65 >= subject2Grade && subject2Grade <= 74) {
+            const grade1 = "grade c";
+          } else if (55 >= subject2Grade && subject2Grade <= 64) {
+            const grade1 = "grade d";
+          } else if (45 >= subject2Grade && subject2Grade <= 54) {
+            const grade1 = "grade e";
+          } else if (44 > subject2Grade) {
+            const grade1 = "grade f9";
+          } else {
+            console.log("invalid");
+          }
+
+          if (subject3Grade > 85) {
+            const grade2 = "grade a";
+          } else if (75 >= subject3Grade && subject3Grade <= 84) {
+            const grade2 = "grade b";
+          } else if (65 >= subject3Grade && subject3Grade <= 74) {
+            const grade2 = "grade c";
+          } else if (55 >= subject3Grade && subject3Grade <= 64) {
+            const grade2 = "grade d";
+          } else if (45 >= subject3Grade && subject3Grade <= 54) {
+            const grade2 = "grade e";
+          } else if (44 > subject3Grade) {
+            const grade2 = "grade f9";
+          } else {
+            console.log("invalid");
+          }
+
+          const averageGrade =
+          Math.round((subject1Grade + subject2Grade + subject3Grade) / 3);
+
+          if (averageGrade > 85) {
+            const averagegrade1 = "grade a";
+          } else if (75 >= averageGrade <= 84) {
+            const averagegrade1 = "grade b";
+          } else if (65 >= averageGrade <= 74) {
+            const averagegrade1 = "grade c";
+          } else if (55 >= averageGrade <= 64) {
+            const averagegrade1 = "grade d";
+          } else if (45 >= averageGrade <= 54) {
+            const averagegrade1 = "grade e";
+          } else if (44 > averageGrade) {
+            const averagegrade1 = "grade f9";
+          } else {
+            console.log("invalid");
+          }
+
+
+
+          const reportCard = document.getElementById("reportCard");
+          reportCard.innerHTML = `
+            <h2 class="text-uppercase"> ${student}'s Report Card</h2>
+            <p class="text-capitalize">${subject1} Grade:  ${grade} ${subject1Grade}</p>
+            <p class="text-capitalize">${subject2} Grade: ${grade1} ${subject2Grade}</p>
+            <p class="text-capitalize">${subject3} Grade: ${grade2} ${subject3Grade}</p>
+            <h3 class="text-capitalize">Average Grade %: ${averagegrade1} ${averageGrade}</h3>
+        `;
+        });
+    </script>
+  </body>
+</html>
