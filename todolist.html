@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./assets/bootstrap5.2/bootstrap.min.css" />
+    <style>
+      /* styles.css */
+      body {
+        font-family: Arial, sans-serif;
+      }
+
+      .container {
+        max-width: 400px;
+        margin: 20px auto;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+
+      input[type="text"] {
+        width: 70%;
+        padding: 8px;
+        margin-right: 5px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+
+      button {
+        padding: 8px 15px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background-color: #0056b3;
+      }
+
+      ul {
+        list-style-type: none;
+        padding: 0;
+      }
+
+      li {
+        margin-bottom: 5px;
+      }
+
+      .completed {
+        text-decoration: line-through;
+        color: #aaa;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>To-Do List</h1>
+      <input type="text" id="taskInput" placeholder="Add new task" />
+      <button id="addTaskBtn" class="">Add Task</button>
+      <ul id="taskList"></ul>
+    </div>
+    <script src="./assets/bootstrap5.2/jquery.min.js"></script>
+    <script src="./assets/bootstrap5.2/bootstrap.bundle.min.js"></script>
+    <script>
+      // script.js
+      document.addEventListener("DOMContentLoaded", function () {
+        const taskInput = document.getElementById("taskInput");
+        const addTaskBtn = document.getElementById("addTaskBtn");
+        const taskList = document.getElementById("taskList");
+
+        // Load tasks from localStorage
+        const tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+
+        // Function to save tasks to localStorage
+        function saveTasks() {
+          localStorage.setItem("tasks", JSON.stringify(tasks));
+        }
+
+        // Function to create a new task item
+        function createTaskItem(taskName) {
+          const li = document.createElement("li");
+          li.textContent = taskName;
+          li.addEventListener("click", function () {
+            li.classList.toggle("completed");
+            saveTasks();
+          });
+          const deleteButton = document.createElement("button");
+          deleteButton.textContent = "Delete";
+          deleteButton.addEventListener("click", function () {
+            const index = tasks.indexOf(taskName);
+            if (index !== -1) {
+              tasks.splice(index, 1);
+              saveTasks();
+              renderTasks();
+            }
+          });
+          li.appendChild(deleteButton);
+          return li;
+        }
+
+        // Function to render tasks
+        function renderTasks() {
+          taskList.innerHTML = "";
+          tasks.forEach(function (taskName) {
+            const li = createTaskItem(taskName);
+            taskList.appendChild(li);
+          });
+        }
+
+        // Event listener for adding tasks
+        addTaskBtn.addEventListener("click", function () {
+          const taskName = taskInput.value.trim();
+          if (taskName !== "") {
+            tasks.push(taskName);
+            saveTasks();
+            renderTasks();
+            taskInput.value = "";
+          }
+        });
+
+        // Initial render of tasks
+        renderTasks();
+      });
+    </script>
+  </body>
+</html>

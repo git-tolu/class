@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const time = new Date().getHours()
+        if (time<10) {
+            salute = 'Good morning'
+        } else if (time<20) {
+            salute = 'Good day'
+        } else {
+            salute = 'Good evening'
+        }
+        console.log(salute);
+
+        switch (true) {
+            case time < 10:
+            greeting = 'Good morning'
+            break;
+            case time <20:
+                greeting ='Good day'
+                break
+                default: greeting = 'Good evening'
+                break
+        }
+        console.log(greeting);
+        //forloop
+        var text = ''
+        for (let i = 0; i < 50; i++) {
+          text += 'the number is' +i+ 'br'
+            
+        }
+        console.log(text);
+
+        //forinloop
+        const person = {fname:'john',lname:'Doe',age:25}
+
+        var text =''
+        for (var x in person) {
+            text += person [x] + '-' +x +""
+        }
+        console.log(text);
+
+        //foreach
+        const numbers =[45,4,9,16,25]
+        let txt = ""
+        numbers.forEach(myFunction);
+        console.log(txt);
+        function myFunction(value,index,array) {
+            txt += value + "<br>"
+        }
+        
+        // forof
+        const cars =["BMW","Volvo","Mini"]
+        var text =""
+        for (var x of cars) {
+            text += x
+        }
+        console.log(text);
+
+        //while loop
+        var i = 0
+
+        while (i < 10) {
+            text += "The number is" + i;
+            i++;
+        } console.log(text);
+
+        //do while 
+        var text = ""
+        var i = 0
+
+        do {
+            text += "<br>The number is" + i;
+            i++;
+        } while (i < 10);
+        console.log(text);
+
+        //break
+        var text = ""
+        for (var i = 0; i<10; i++) {
+            if (i === 3) {
+                break;
+            }
+            text += "The number is" + i + "<br>"
+        }
+        console.log(text);
+         
+        //continue
+        var text = ""
+    </script>
+</body>
+</html>

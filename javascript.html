@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>javascript page</title>
+    <link rel="stylesheet" href="./assets/bootstrap5.2/bootstrap.min.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div id="demo"></div>
+      <button class="btn btn-primary" onclick="addText()">Click me</button>
+    </div>
+    <script src="./assets/bootstrap5.2/jquery.min.js"></script>
+    <script src="./assets/bootstrap5.2/bootstrap.bundle.min.js"></script>
+    <script>
+      $("#demo").html('<h1 class="text-danger"> hello world </h1>');
+      function addText() {
+        var haiudh = "suhsdiu";
+        // return haiudh
+        document.getElementById("demo").innerHTML =
+          ' <h1 class="text-danger"> First javascript function </h1>';
+      }
+
+      document.write("javascript");
+      // alert('hello')
+      console.log("ashisu");
+      var age = 13;
+      // console.log(age)
+      var age = 15;
+      console.log(age);
+      let name = "shalom";
+      //   let name = "shalm";
+      console.log(name);
+      const girl = "shalom";
+    //   variable and arithmetic operation and assignment operation
+      var x = 6;
+      var y = 6;
+      var z = x + y;
+      console.log(z);
+    //   if else
+      mark = 90;
+      if (mark > 85) {
+        console.log("A");
+      } else if (70 >= mark <= 85) {
+        console.log("b");
+      } else {
+        console.log("not same");
+      }
+    </script>
+  </body>
+</html>

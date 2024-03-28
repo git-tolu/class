@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // Create a Map
+      var fruits = new Map([
+        ["apples", 500],
+        ["bananas", 300],
+        ["oranges", 200],
+      ]);
+
+      // Create a Map
+      var fruits = new Map();
+
+      // Set Map Values
+      fruits.set("apples", 500);
+      fruits.set("bananas", 300);
+      fruits.set("oranges", 200);
+
+// The get() Method
+      fruits.get("apples"); 
+
+
+    //   The size Property
+    fruits.size;
+
+
+    // delete map method
+    fruits.delete("apples");
+
+    // The has() Method
+    fruits.has("apples");
+
+
+    // List all entries
+var text = "";
+fruits.forEach (function(value, key) {
+  text += key + ' = ' + value;
+})
+
+
+
+// List all entries
+var text = "";
+for (const x of fruits.entries()) {
+  text += x;
+}
+
+
+
+// javascript numbers
+
+// converting string to number
+
+Number("3.14") + "<br>" +
+Number(Math.PI) + "<br>" +
+Number("    ") + "<br>" +
+Number("") + "<br>" +
+Number("99 88") + "<br>" +
+Number("John") + "<br>";
+
+// converting number to string
+let x = 123;
+
+  String(x) + "<br>" +
+  String(123) + "<br>" +
+  String(100 + 23);
+
+
+
+//   regex
+function validatePassword(password) {
+    // Regular expression to match the password criteria:
+    // - At least 8 characters long
+    // - Contains at least one uppercase letter
+    // - Contains at least one lowercase letter
+    // - Contains at least one digit
+    // - Contains at least one special character
+    var passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+
+    // Test the password against the regular expression
+    return passwordRegex.test(password);
+}
+
+// Example usage:
+var password = "MyP@ssw0rd";
+if (validatePassword(password)) {
+    console.log("Password is valid");
+} else {
+    console.log("Password is not valid");
+}
+
+
+
+
+    </script>
+  </body>
+</html>

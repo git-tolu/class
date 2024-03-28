@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>array iteration</title>
+  </head>
+  <body>
+    <script>
+      // array foreach
+      const numbers = [45, 4, 9, 16, 25];
+      let txt = "";
+      numbers.forEach(myFunction);
+
+      function myFunction(value) {
+        txt += value + "<br>";
+      }
+      console.log(txt);
+
+      //   array map
+      const numbers1 = [45, 4, 9, 16, 25];
+      const numbers2 = numbers1.map(myFunction);
+
+      console.log(numbers2);
+
+      function myFunction(value) {
+        return value * 2;
+      }
+
+      //   flatmap
+      const myArr = [1, 2, 3, 4, 5, 6];
+      const newArr = myArr.flatMap((x) => x * 2);
+      console.log(newArr);
+
+      //   filter
+
+      const over18 = numbers.filter(myFunction);
+      function myFunction(value) {
+        return value > 18;
+      }
+      console.log(over18);
+
+      //   reduce
+
+      let sum = numbers.reduce(myFunction);
+
+      function myFunction(total, value) {
+        return total + value;
+      }
+      console.log(sum);
+
+      //   reduce right
+
+      let sum1 = numbers.reduceRight(myFunction);
+
+      function myFunction(total, value) {
+        return total + value;
+      }
+      console.log(sum1);
+
+      //   every
+
+      let allOver18 = numbers.every(myFunction);
+
+      function myFunction(value) {
+        return value > 18;
+      }
+
+      console.log(allOver18);
+
+      // some
+
+      let someOver18 = numbers.some(myFunction);
+
+      console.log("Some over 18 is " + someOver18);
+
+      function myFunction(value, index, array) {
+        return value > 18;
+      }
+
+      //   array
+
+      console.log(Array.from("ABCDEFG"));
+
+      // keys
+      const fruits = ["Banana", "Orange", "Apple", "Mango"];
+      const keys = fruits.keys();
+
+      let text = "";
+      for (let x of keys) {
+        text += x + "<br>";
+      }
+      console.log(text);
+
+      //   entries
+
+      const f = fruits.entries();
+
+      for (let x of f) {
+        console.log(x + "<br>");
+      }
+
+      //   with
+      const months = ["Januar", "Februar", "Mar", "April"];
+      const myMonths = months.with(2, "March");
+
+      console.log(myMonths);
+
+      //   spread
+      const q1 = ["Jan", "Feb", "Mar"];
+      const q2 = ["Apr", "May", "Jun"];
+      const q3 = ["Jul", "Aug", "Sep"];
+      const q4 = ["Oct", "Nov", "May"];
+
+      const year = [...q1, ...q2, ...q3, ...q4];
+      console.log(year);
+
+      // javascript date
+
+      //   date
+      const d = new Date();
+      console.log(d);
+
+      const d2 = new Date("2022-03-25");
+      console.log(d2);
+
+      //   date string
+      const d3 = new Date("October 13, 2014 11:13:00");
+      console.log(d3);
+
+      //   9 ways to create a date object
+      // new Date()
+      // new Date(date string)
+
+      // new Date(year,month)
+      // new Date(year,month,day)
+      // new Date(year,month,day,hours)
+      // new Date(year,month,day,hours,minutes)
+      // new Date(year,month,day,hours,minutes,seconds)
+      // new Date(year,month,day,hours,minutes,seconds,ms)
+
+      // new Date(milliseconds)
+
+      const d4 = new Date(2018, 11, 24, 10, 33, 30, 0);
+      console.log(d4);
+
+      const d5 = new Date(2018, 15, 24, 10, 33, 30);
+      console.log(d4);
+
+      //   milliseconds
+      const d6 = new Date(100000000000);
+      console.log(d6);
+
+      //   todatestring
+      console.log(d.toDateString());
+      console.log(d.toUTCString());
+      console.log(d.toISOString());
+    </script>
+  </body>
+</html>

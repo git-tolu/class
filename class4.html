@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>class 4</title>
+  </head>
+  <body>
+    <p id="demo"></p>
+
+    <script>
+      const cars = ["Saab", "Volvo", "BMW"];
+      cars[0] = "Opel";
+      document.getElementById("demo").innerHTML = cars;
+      //   convert to string
+      const fruits = ["Banana", "Orange", "Apple", "Mango"];
+      console.log(fruits.toString());
+      //   objects
+      const person = { firstName: "John", lastName: "Doe", age: 46 };
+      console.log(person.firstName);
+      //   array methods
+      console.log(cars.length); // Returns the number of elements
+      console.log(cars.sort()); // Sorts the array
+      //   Accessing the Last Array Element
+      console.log(fruits[fruits.length - 1]);
+
+      //   Looping Array Elements
+      let fLen = fruits.length;
+
+      let text = "<ul>";
+      for (let i = 0; i < fLen; i++) {
+        text += "<li>" + fruits[i] + "</li>";
+      }
+      text += "</ul>";
+      //   document.getElementById("demo").innerHTML = text;
+
+      console.log(text);
+
+      //   fruits.push("Lemon"); // Adds a new element (Lemon) to fruits
+      //   console.log(fruits);
+
+      //   fruits[fruits.length] = "Lemon"; // Adds "Lemon" to fruits
+      //   console.log(fruits);
+
+      fruits[6] = "Lemon"; // Creates undefined "holes" in fruits
+      console.log(fruits);
+
+      console.log(Array.isArray(fruits));
+
+      //   JavaScript Array join()
+      console.log(fruits.join(","));
+
+      //   JavaScript Array pop()
+      console.log(fruits.pop());
+      console.log(fruits);
+
+      // JavaScript Array push()
+      fruits.push("Kiwi");
+      console.log(fruits);
+
+      // JavaScript Array shift()
+      fruits.shift();
+      console.log(fruits);
+
+      // JavaScript Array unshift()
+      fruits.unshift("Lemon");
+      console.log(fruits);
+
+      // JavaScript Array unshift()
+      fruits.unshift("Lemon");
+      console.log(fruits);
+
+      //  JavaScript Array delete()
+      delete fruits[0];
+      console.log(fruits);
+
+      //  JavaScript Array concat()
+      const myGirls = ["Cecilie", "Lone"];
+      const myBoys = ["Emil", "Tobias", "Linus"];
+
+      const myChildren = myGirls.concat(myBoys);
+      console.log(myChildren);
+
+      //   Example (Merging Three Arrays)
+      const arr1 = ["Cecilie", "Lone"];
+      const arr2 = ["Emil", "Tobias", "Linus"];
+      const arr3 = ["Robin", "Morgan"];
+      const totalArray = arr1.concat(arr2, arr3);
+
+      //   Example (Merging an Array with Values)
+      const Merging = ["Emil", "Tobias", "Linus"];
+      const mergingResult = Merging.concat("Peter");
+
+      // Array copyWithin()
+      console.log(fruits.copyWithin(2, 0, 2));
+
+      // JavaScript Array splice()
+      fruits.splice(2, 0, "Lemon", "Kiwi");
+      console.log(fruits);
+
+      fruits.splice(2, 2, "Lesdmon", "sdf");
+      console.log(fruits);
+
+      fruits.splice(0, 1);
+      console.log(fruits);
+
+      //  JavaScript Array toSpliced()
+      const months = ["Jan", "Feb", "Mar", "Apr"];
+      const spliced = months.toSpliced(0, 1);
+      console.log(months);
+      console.log(spliced);
+      console.log(months);
+
+
+    //   JavaScript Array slice()
+      const citrus = months.slice(3);
+      console.log(citrus);
+    //   console.log(months);
+      
+      const citrus2 = months.slice(1, 3);
+      console.log(citrus2);
+    //   console.log(months);
+    citrus2.copyWithin()
+    </script>
+  </body>
+</html>
