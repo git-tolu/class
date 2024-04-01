@@ -129,81 +129,84 @@
           const subject3 = document.getElementById("subjectname3").value;
 
           const subject1Grade = 
-            parseInt(document.getElementById("subject1").value) 
+            Number(document.getElementById("subject1").value)
           ;
           const subject2Grade = 
-          parseInt(document.getElementById("subject2").value)
+          Number(document.getElementById("subject2").value)
           ;
           const subject3Grade = 
-          parseInt(document.getElementById("subject3").value)
+          Number(document.getElementById("subject3").value)
           ;
 
 
           if (subject1Grade > 85) {
-            const grade = "grade a";
-          } else if (75 >= subject1Grade && subject1Grade <= 84) {
-            const grade = "grade b";
-          } else if (65 >= subject1Grade && subject1Grade <= 74) {
-            const grade = "grade c";
-          } else if (55 >= subject1Grade && subject1Grade <= 64) {
-            const grade = "grade d";
-          } else if (45 >= subject1Grade && subject1Grade <= 54) {
-            const grade = "grade e";
+            var grade = "grade a";
+          } else if (75 >= subject1Grade  <= 84) {
+            var grade = "grade b";
+          } else if (65 >= subject1Grade  <= 74) {
+            var grade = "grade c";
+          } else if (55 >= subject1Grade <= 64) {
+            var grade = "grade d";
+          } else if (45 >= subject1Grade <= 54) {
+            var grade = "grade e";
           } else if (44 > subject1Grade) {
-            const grade = "grade f9";
+            var grade = "grade f9";
           } else {
             console.log("invalid");
           }
 
 
 
-          if (subject2Grade >= 85) {
-            const grade1 = "grade a";
-          } else if (75 >= subject2Grade && subject2Grade <= 84) {
-            const grade1 = "grade b";
-          } else if (65 >= subject2Grade && subject2Grade <= 74) {
-            const grade1 = "grade c";
-          } else if (55 >= subject2Grade && subject2Grade <= 64) {
-            const grade1 = "grade d";
-          } else if (45 >= subject2Grade && subject2Grade <= 54) {
-            const grade1 = "grade e";
+          if (subject2Grade > 85) {
+            var grade1 = "grade a";
+          } else if (75 >= subject2Grade <= 84) {
+            var grade1 = "grade b";
+          } else if (65 >= subject2Grade <= 74) {
+            var grade1 = "grade c";
+          } else if (55 >= subject2Grade <= 64) {
+            var grade1 = "grade d";
+          } else if (45 >= subject2Grade <= 54) {
+            var grade1 = "grade e";
           } else if (44 > subject2Grade) {
-            const grade1 = "grade f9";
+            var grade1 = "grade f9";
           } else {
             console.log("invalid");
           }
 
           if (subject3Grade > 85) {
-            const grade2 = "grade a";
-          } else if (75 >= subject3Grade && subject3Grade <= 84) {
-            const grade2 = "grade b";
-          } else if (65 >= subject3Grade && subject3Grade <= 74) {
-            const grade2 = "grade c";
-          } else if (55 >= subject3Grade && subject3Grade <= 64) {
-            const grade2 = "grade d";
-          } else if (45 >= subject3Grade && subject3Grade <= 54) {
-            const grade2 = "grade e";
+            var grade2 = "grade a";
+          } else if (75 >= subject3Grade <= 84) {
+            var grade2 = "grade b";
+          } else if (65 >= subject3Grade <= 74) {
+            var grade2 = "grade c";
+          } else if (55 >= subject3Grade <= 64) {
+            var grade2 = "grade d";
+          } else if (45 >= subject3Grade <= 54) {
+            var grade2 = "grade e";
           } else if (44 > subject3Grade) {
-            const grade2 = "grade f9";
+            var grade2 = "grade f9";
           } else {
             console.log("invalid");
           }
+          console.log(grade);
+console.log(grade1);
+console.log(grade2);
 
           const averageGrade =
           Math.round((subject1Grade + subject2Grade + subject3Grade) / 3);
 
           if (averageGrade > 85) {
-            const averagegrade1 = "grade a";
+            var averagegrade1 = "grade a";
           } else if (75 >= averageGrade <= 84) {
-            const averagegrade1 = "grade b";
+            var averagegrade1 = "grade b";
           } else if (65 >= averageGrade <= 74) {
-            const averagegrade1 = "grade c";
+            var averagegrade1 = "grade c";
           } else if (55 >= averageGrade <= 64) {
-            const averagegrade1 = "grade d";
+            var averagegrade1 = "grade d";
           } else if (45 >= averageGrade <= 54) {
-            const averagegrade1 = "grade e";
+            var averagegrade1 = "grade e";
           } else if (44 > averageGrade) {
-            const averagegrade1 = "grade f9";
+            var averagegrade1 = "grade f9";
           } else {
             console.log("invalid");
           }
