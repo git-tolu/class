@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>javascript graphic plugins</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  </head>
+  <body>
+    <div id="myPlot" style="width: 100%; max-width: 700px"></div>
+
+    <script>
+      // bar chart
+      //   const xArray = ["nigeria", "mexico", "kenya", "china", "japan"];
+      //   const yArray = [100, 49, 34, 57, 8];
+
+      //   const data = [
+      //     {
+      //       x: xArray,
+      //       y: yArray,
+      //       type: "bar",
+      //       orientation: "v",
+      //       marker: { color: "green" },
+      //     },
+      //   ];
+
+      //   const layout = { title: "World Wide Wine Production" };
+
+      //   Plotly.newPlot("myPlot", data, layout);
+
+      // pie chart
+      //   const xArray = ["Italy", "France", "Spain", "USA", "Argentina"];
+      //   const yArray = [55, 49, 44, 24, 15];
+
+      //   const layout = { title: "World Wide Wine Production" };
+
+      //   const data = [{ labels: xArray, values: yArray, type: "pie" }];
+
+      //   Plotly.newPlot("myPlot", data, layout);
+
+
+      //   plotting equation
+      let exp = "Math.sin(x)";
+
+      // Generate values
+      const xValues = [];
+      const yValues = [];
+      for (let x = 0; x <= 10; x += 0.1) {
+        xValues.push(x);
+        yValues.push(eval(exp));
+      }
+
+      // Display using Plotly
+      const data = [{ x: xValues, y: yValues, mode: "lines" }];
+      const layout = { title: "y = " + exp };
+      Plotly.newPlot("myPlot", data, layout);
+      
+    </script>
+  </body>
+</html>
